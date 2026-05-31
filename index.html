@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>TaskFlow</h1>
+    <p>Stay on top of your day.</p>
+  </header>
+
+  <main class="container">
+
+    <section class="add-task-section">
+      <form id="task-form">
+        <input
+          type="text"
+          id="task-input"
+          placeholder="Add a new task..."
+          autocomplete="off"
+          required
+        />
+        <button type="submit">Add</button>
+      </form>
+    </section>
+
+    <section class="filter-section">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="active">Active</button>
+      <button class="filter-btn" data-filter="completed">Completed</button>
+    </section>
+
+    <section class="task-list-section">
+      <ul id="task-list">
+        <!-- tasks rendered here by JS -->
+      </ul>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
