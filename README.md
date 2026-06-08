@@ -1,108 +1,65 @@
-# TaskFlow
+TaskFlow
 
-A task manager web app for organizing and tracking daily work. Built with a vanilla JS frontend and a Node.js/Express REST API backend.
+TaskFlow is a task manager web application for organizing daily tasks. It includes a vanilla JavaScript frontend and a Node.js/Express REST API backend.
 
----
+Live Demo
 
-## Features
+https://jaspreetbaidh.github.io/taskflow/
 
-- Add, edit, and delete tasks
-- Mark tasks complete or incomplete
-- Filter by All / Active / Completed
-- Clear all completed tasks at once
-- Persistent storage - uses the API when the server is running, falls back to `localStorage` otherwise
-- Responsive layout, works on mobile
-
----
-
-## Tech stack
-
-| Layer    | Technology              |
-|----------|-------------------------|
-| Frontend | HTML, CSS, JavaScript   |
-| Backend  | Node.js, Express        |
-| Storage  | In-memory (server) / localStorage (fallback) |
-
----
-
-## Getting started
-
-### Prerequisites
-
-- Node.js v18+
-- npm
-
-### Install and run
-
-```bash
-# Clone the repo
-git clone https://github.com/your-username/taskflow.git
+Features
+Add, edit, and delete tasks
+Mark tasks as complete or incomplete
+Filter tasks by all, active, or completed
+Clear completed tasks
+Saves tasks using the API when the server is running
+Falls back to localStorage when opened as a static site
+Responsive layout for desktop and mobile
+Tech Stack
+Layer	Technology
+Frontend	HTML, CSS, JavaScript
+Backend	Node.js, Express
+Storage	In-memory server storage, localStorage fallback
+Getting Started
+Prerequisites
+Node.js v18+
+npm
+Run Locally
+git clone https://github.com/JaspreetBaidh/taskflow.git
 cd taskflow
-
-# Install dependencies
 npm install
-
-# Start the server
 npm start
-```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open:
 
-For development with auto-restart:
+http://localhost:3000
 
-```bash
+For development:
+
 npm run dev
-```
+API Routes
 
-### Frontend only (no Node.js)
+Base URL:
 
-Open `index.html` directly in a browser. Tasks will be saved to `localStorage`.
-
----
-
-## API reference
-
-Base URL: `http://localhost:3000/api`
-
-| Method   | Endpoint         | Description                  |
-|----------|------------------|------------------------------|
-| `GET`    | `/tasks`         | Get all tasks                |
-| `POST`   | `/tasks`         | Create a task                |
-| `PATCH`  | `/tasks/:id`     | Update text and/or completed |
-| `DELETE` | `/tasks/:id`     | Delete a task                |
-| `DELETE` | `/tasks`         | Delete all completed tasks   |
-
-**POST /tasks body:**
-```json
-{ "text": "Your task text here" }
-```
-
-**PATCH /tasks/:id body (any combination):**
-```json
-{ "text": "Updated text", "completed": true }
-```
-
----
-
-## Project structure
-
-```
+http://localhost:3000/api/tasks
+Method	Endpoint	Description
+GET	/	Get all tasks
+POST	/	Create a task
+PATCH	/	Update a task
+DELETE	/	Delete a task
+DELETE	/	Clear completed tasks
+Project Structure
 taskflow/
-├── index.html        # App shell
-├── style.css         # All styles
-├── script.js         # Frontend logic and API calls
-├── server.js         # Express server entry point
-├── routes/
-│   └── tasks.js      # Task REST API routes
-└── package.json
-```
-
----
-
-## Future improvements
-
-- Persist tasks to a database (SQLite or PostgreSQL)
-- User accounts and authentication
-- Due dates and priority levels
-- Drag-and-drop reordering
-- Dark mode toggle
+├── index.html
+├── style.css
+├── script.js
+├── server.js
+├── package.json
+├── README.md
+└── routes/
+    └── tasks.js
+Future Improvements
+Add database storage with SQLite or PostgreSQL
+Add user accounts
+Add due dates and priority levels
+Add drag-and-drop task ordering
+Add dark mode
