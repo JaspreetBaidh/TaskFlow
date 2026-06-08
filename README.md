@@ -10,7 +10,7 @@ A task manager web app for organizing and tracking daily work. Built with a vani
 - Mark tasks complete or incomplete
 - Filter by All / Active / Completed
 - Clear all completed tasks at once
-- Persistent storage — uses the API when the server is running, falls back to `localStorage` otherwise
+- Persistent storage - uses the API when the server is running, falls back to `localStorage` otherwise
 - Responsive layout, works on mobile
 
 ---
