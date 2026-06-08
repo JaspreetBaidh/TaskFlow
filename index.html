@@ -5,42 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TaskFlow</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Fraunces:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <header class="site-header">
-    <h1>TaskFlow</h1>
-    <p>Stay on top of your day.</p>
-  </header>
+  <div class="app-shell">
 
-  <main class="container">
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="brand">
+          <span class="brand-icon" aria-hidden="true">&#10003;</span>
+          <span class="brand-name">TaskFlow</span>
+        </div>
+        <span class="task-count" id="task-count">0 tasks</span>
+      </div>
+    </header>
 
-    <section class="add-task-section">
-      <form id="task-form">
-        <input
-          type="text"
-          id="task-input"
-          placeholder="Add a new task..."
-          autocomplete="off"
-          required
-        />
-        <button type="submit">Add</button>
-      </form>
-    </section>
+    <main class="main">
+      <div class="container">
 
-    <section class="filter-section">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="active">Active</button>
-      <button class="filter-btn" data-filter="completed">Completed</button>
-    </section>
+        <section class="add-task-card" aria-label="Add a task">
+          <form id="task-form">
+            <div class="input-row">
+              <input
+                type="text"
+                id="task-input"
+                placeholder="What needs to get done?"
+                autocomplete="off"
+                required
+                aria-label="New task"
+              />
+              <button type="submit" class="btn-add" aria-label="Add task">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+                  <line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/>
+                </svg>
+                Add
+              </button>
+            </div>
+          </form>
+        </section>
 
-    <section class="task-list-section">
-      <ul id="task-list">
-        <!-- tasks rendered here by JS -->
-      </ul>
-    </section>
+        <div class="filter-bar" role="group" aria-label="Filter tasks">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="active">Active</button>
+          <button class="filter-btn" data-filter="completed">Completed</button>
+          <span class="filter-divider" aria-hidden="true"></span>
+          <button class="btn-clear-completed" id="clear-completed">Clear completed</button>
+        </div>
 
-  </main>
+        <!-- JS renders task items here -->
+        <ul class="task-list" id="task-list" aria-label="Task list" aria-live="polite"></ul>
+
+        <div class="empty-state" id="empty-state" hidden>
+          <div class="empty-icon" aria-hidden="true">&#10003;</div>
+          <p class="empty-title">All clear</p>
+          <p class="empty-sub">Add a task above to get started.</p>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
 
   <script src="script.js"></script>
 </body>
