@@ -4,7 +4,7 @@ TaskFlow is a task manager web application for organizing daily tasks. It includ
 
 ## Live Demo
 
-https://jaspreetbaidh.github.io/taskflow/
+https://jaspreetbaidh.github.io/TaskFlow/
 
 ## Features
 
